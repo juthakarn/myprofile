@@ -3,10 +3,13 @@
 
 <head>
     <title>Profile</title>
-
     <style>
         body {
             background-color: linen;
+            font-family: 'Roboto', sans-serif;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         h1 {
@@ -19,6 +22,11 @@
             text-align: center;
         }
 
+        h3 {
+            color: palevioletred;
+            text-align: center;
+        }
+
         p {
             color: indianred;
             font-family: verdana;
@@ -27,13 +35,21 @@
         }
 
         img {
-            margin: 25px 0px 25px 580px;
+            display: block;
+            margin: 25px auto;
+            width: 200px;
+            height: 333px;
         }
 
-        ul,
+        ol {
+            margin-left: calc(45% - 40px);
+        }
+
         li {
-            margin-left: 150px;
             color: hotpink;
+            margin: 15px auto;
+            text-align: left;
+            list-style-position: inside;
         }
 
         table,
@@ -49,23 +65,45 @@
             text-align: center;
             color: salmon;
         }
-    </style>
 
+        canvas {
+            height: 50%;
+            cursor: crosshair;
+            display: block;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+        }
+
+        .my-video iframe {
+            display: block;
+            margin: 15px auto;
+            display: none;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            height: 40px;
+            border-radius: 5px;
+            background-color: dodgerblue;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Kanit|Roboto" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
-
+    <canvas id="canvas">Canvas is not supported in your browser.</canvas>
     <h1>This is my Profile</h1>
-    <p>This is my cat.Name is Ladies.</p>
+    <h2>This is my cat name is Ladies.</h2>
 
-    <img src="meAndcat.jpg" alt="Lady" usemap="#catmap" style="width:200px;height:333px;">
+    <a href="https://google.co.th" target="_blank"><img src="meAndcat.jpg" alt="Lady"></a>
 
-    <map name="catmap">
-        <area shape="rect" coords="0,0,200,333" alt="Computer" href="https://www.google.co.th">
-    </map>
 
-    <h2>My Table</h2>
-
+    <h3>My Table</h3>
     <table style="width:100%">
         <tr>
             <th>Name</th>
@@ -77,13 +115,35 @@
         </tr>
     </table>
 
-    <h2>My List</h2>
+    <h2>My Favourite</h2>
 
-    <ul>
-        <li>Me</li>
-        <li>Ladies</li>
-    </ul>
+    <ol>
+        <li>Japanese Food</li>
+        <li>Pancake</li>
+        <li>Cat</li>
+        <li>Hamsters</li>
+    </ol>
+    <div class="my-video">
+        <iframe id="my-video" width="560" height="315" src="https://www.youtube.com/embed/BhmbSIAkdno" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <button onClick="OnClick()">Click to watch My Favourite Video</button>
 
 </body>
+<script>
+    var hidden = false
+    var i = 0;
+    const Video = $("#my-video")
+    const OnClick = () => {
+        hidden = !hidden
+        i++
+        if (i == 5) {
+            alert('พอแล้ว !!!')
+            i = 0;
+        }
+        Video.css("display", hidden ? "none" : "block");
+    }
+</script>
+<script type="text/javascript" src="firework.js"></script>
 
 </html>
