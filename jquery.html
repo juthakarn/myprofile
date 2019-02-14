@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Profile</title>
+  <style>
+    body {
+      background-color: linen;
+      font-family: 'Roboto', sans-serif;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: maroon;
+      text-align: center;
+    }
+
+    h2 {
+      color: palevioletred;
+      text-align: center;
+    }
+
+    h3 {
+      color: palevioletred;
+      text-align: center;
+    }
+
+    p {
+      color: indianred;
+      font-family: verdana;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    img {
+      display: block;
+      margin: 25px auto;
+      width: 200px;
+      height: 333px;
+    }
+
+    ol {
+      margin-left: calc(45% - 40px);
+    }
+
+    li {
+      color: hotpink;
+      margin: 15px auto;
+      text-align: left;
+      list-style-position: inside;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid saddlebrown;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 5px;
+      text-align: center;
+      color: salmon;
+    }
+
+    canvas {
+      height: 50%;
+      cursor: crosshair;
+      display: block;
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+    }
+
+    .my-video iframe {
+      display: block;
+      margin: 15px auto;
+      display: none;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      height: 40px;
+      border-radius: 5px;
+      background-color: dodgerblue;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Kanit|Roboto" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- import jquery-->
+</head>
+
+<body>
+  <canvas id="canvas">Canvas is not supported in your browser.</canvas>
+  <h1>This is my Profile</h1>
+  <h2>This is my cat name is Ladies.</h2>
+
+  <a href="https://google.co.th" target="_blank"><img src="meAndcat.jpg" alt="Lady"></a>
+
+
+  <h3>My Table</h3>
+  <table style="width:100%">
+    <tr>
+      <th>Name</th>
+      <th colspan="2">ID</th>
+    </tr>
+    <tr>
+      <td>Juthakarn Saelim</td>
+      <td>5635512142</td>
+    </tr>
+  </table>
+
+  <h2>My Favourite</h2>
+
+  <ol>
+    <li>Japanese Food</li>
+    <li>Pancake</li>
+    <li>Cat</li>
+    <li>Hamsters</li>
+  </ol>
+  <div class="my-video">
+    <iframe id="my-video" width="560" height="315" src="https://www.youtube.com/embed/BhmbSIAkdno" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <button onClick="OnClick()">Click to watch My Favourite Video</button>
+
+</body>
+<script>
+  var hidden = false
+  var i = 0;
+  // const Video = document.getElementById('my-video')
+  const Video = $("#my-video") //  <iframe id="my-video"
+  // const VideoClass = $(".my-video") //  <div class="my-video">
+  const OnClick = () => {
+    hidden = !hidden
+    i++
+    if (i == 5) {
+      alert('พอแล้ว !!!')
+      i = 0;
+    }
+    Video.css("display", hidden ? "none" : "block");
+  }
+</script>
+<script type="text/javascript" src="firework.js"></script>
+
+</html>
